@@ -21,3 +21,11 @@ new Vue({
   el: '#app',
   render: h => h(App)
 });
+
+
+//whb:全局变量或函数定义区域_________begin
+Vue.prototype.goBack = function (event) {
+  console.log(event);
+  //page.$router.go(-1);
+};
+//whb:全局变量或函数定义区域_________end

@@ -53,7 +53,7 @@ const routes = [
         name: 'search',
         component: () => import('./view/search'),
         meta: {
-            title: '登陆'
+            title: '搜索'
         }
     },
 

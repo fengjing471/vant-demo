@@ -1,10 +1,8 @@
 <template>
     <div>
-        <van-nav-bar
-                title="XX商城"
-                right-text="搜索"
-                @click-right="onClickRight"
-        />
+        <van-nav-bar title="XX商城">
+            <van-icon name="search" slot="right" @click="onClickRight"/>
+        </van-nav-bar>
 
         <van-swipe :autoplay="3000">
             <van-swipe-item v-for="(image, index) in swipeimages" :key="index">
@@ -25,14 +23,11 @@
 <script>
     import ComTab from '../../components/ComTab';
     import {
-        NavBar, Row, Col, Icon, Field,
-        Toast, NoticeBar,
+        NavBar, Row, Col, Icon, Field,Toast,
 
-        Waterfall,
+        NoticeBar,
 
         Swipe, SwipeItem,
-
-        Tabbar, TabbarItem
 
     } from 'vant';
 
@@ -43,24 +38,18 @@
             [Col.name]: Col,
             [Icon.name]: Icon,
             [Field.name]: Field,
-
             [Toast.name]: Toast,
-            [NoticeBar.name]: NoticeBar,
 
-            [Waterfall.name]: Waterfall,
+            [NoticeBar.name]: NoticeBar,
 
             [Swipe.name]: Swipe,
             [SwipeItem.name]: SwipeItem,
-
-            [Tabbar.name]: Tabbar,
-            [TabbarItem.name]: TabbarItem,
 
             'ComTab':ComTab
 
         },
         data() {
             return {
-                tabactive:0,
                 swipeimages: [
                     //'/img/swipe/1.jpg',
                     'http://m.360buyimg.com/mobilecms/jfs/t26806/45/359071206/123827/98401adb/5b8fc61bN8b4cce20.jpg!cr_1125x549_0_72',
