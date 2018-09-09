@@ -16,17 +16,14 @@
             足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。
         </van-notice-bar>
 
-        <van-tabbar v-model="tabactive">
-            <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
-            <van-tabbar-item icon="idcard" dot><router-link to="/tablist">分类</router-link></van-tabbar-item>
-            <van-tabbar-item icon="cart"><router-link to="/cart">购物车</router-link></van-tabbar-item>
-            <van-tabbar-item icon="contact" info="5"><router-link to="/user">我的</router-link></van-tabbar-item>
-        </van-tabbar>
+        <!--whb:加载自定义Tab组件-->
+        <ComTab />
 
     </div>
 </template>
 
 <script>
+    import ComTab from '../../components/ComTab';
     import {
         NavBar, Row, Col, Icon, Field,
         Toast, NoticeBar,
@@ -36,7 +33,6 @@
         Swipe, SwipeItem,
 
         Tabbar, TabbarItem
-
 
     } from 'vant';
 
@@ -57,7 +53,9 @@
             [SwipeItem.name]: SwipeItem,
 
             [Tabbar.name]: Tabbar,
-            [TabbarItem.name]: TabbarItem
+            [TabbarItem.name]: TabbarItem,
+
+            'ComTab':ComTab
 
         },
         data() {
