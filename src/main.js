@@ -6,10 +6,15 @@ import Vue from 'vue';
 import App from './App.vue';
 import { router } from './router';
 
-//whb:启用自定义全局样式
+
+//whb:引入axios网络通信组件
+import http from './components/axios'
+Vue.prototype.$http = http; //风格2：Vue.use(ajax, axios)
+
+//whb:引入自定义全局样式
 import './common/rfstyle.less';
 
-//whb:启用自定义全局组件
+//whb:引入自定义全局组件
 import GlobalTab  from './components/global-tab';
 Vue.use(GlobalTab);
 
@@ -30,12 +35,10 @@ new Vue({
   render: h => h(App)
 });
 
-
-
-
 //whb:全局变量或函数定义区域_________begin
 Vue.prototype.goBack = function (event) {
   console.log(event);
+  router.currentRoute.go(-1);
   //page.$router.go(-1);
 };
 //whb:全局变量或函数定义区域_________end

@@ -1,6 +1,7 @@
 注1：src源码目录 和 public全局静态目录，是@vue/cli 3.0革命版本的框架目录
 注2：main.js (App.vue)是全局入口文件
 注3：package.json中既有插件定义，又有插件配置（比如eslint的rule）
+注4：本框架需要手动安装网络通信组件axios: npm install axios --save
 /*--------------------------- whb:华丽的分割线 ---------------------------*/
 #路由技巧：
 跳转：<router-link to="/tablist">  this.$router.push("url");//replace是直接替换栈

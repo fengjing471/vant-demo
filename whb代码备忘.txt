@@ -27,3 +27,19 @@
 [GoodsAction.name]: GoodsAction,
 [GoodsActionBigBtn.name]: GoodsActionBigBtn,
 [GoodsActionMiniBtn.name]: GoodsActionMiniBtn
+
+//http response 拦截器
+axios.interceptors.response.use(
+  response => {
+    if(response.data.errCode ==2){
+      router.push({
+        path:"/login",
+        querry:{redirect:router.currentRoute.fullPath}//从哪个页面跳转
+      })
+    }
+    return response;
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)

@@ -28,7 +28,7 @@
 
         <div class="h-30"></div>
 
-        <van-button type="primary" size="large">登 陆</van-button>
+        <van-button type="primary" size="large" @click="onLogin">登 陆</van-button>
 
     </div>
 </template>
@@ -65,6 +65,19 @@
             },
             onClickRight() {
                 Toast('模块建设中');
+            },
+            onLogin() {
+                //let url="/kbuser/api/user/login";
+                let url="/piuser/login";
+                let params = {username: this.username, password: this.password};
+                this.$http.post(url, params)
+                    .then(function (res) {
+                        console.log(res);
+
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    })
             }
         }
 
