@@ -6,6 +6,9 @@ import Vue from 'vue';
 import App from './App.vue';
 import { router } from './router';
 
+//whb:启用自定义全局样式
+import './common/rfstyle.less';
+
 //whb:启用自定义全局组件
 import GlobalTab  from './components/global-tab';
 Vue.use(GlobalTab);

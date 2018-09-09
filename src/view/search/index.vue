@@ -13,6 +13,10 @@
             <div slot="action" @click="onSearch">搜索</div>
         </van-search>
 
+
+        <!--whb:加载自定义全局组件Tab-->
+        <GlobalTab />
+
     </div>
 </template>
 

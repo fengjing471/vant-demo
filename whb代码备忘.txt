@@ -1,3 +1,8 @@
+#导航栏
+<van-nav-bar title="XX商城">
+    <van-icon name="search" slot="left" @click="onClickLeft"/>
+    <van-icon name="idcard" slot="right" @click="onClickRight"/>
+</van-nav-bar>
 #购物车
 <van-goods-action>
             <van-goods-action-mini-btn icon="chat">

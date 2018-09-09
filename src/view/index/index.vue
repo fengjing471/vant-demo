@@ -1,7 +1,9 @@
 <template>
     <div>
+
         <van-nav-bar title="XX商城">
-            <van-icon name="search" slot="right" @click="onClickRight"/>
+            <van-icon name="search" slot="left" @click="onClickLeft"/>
+            <van-icon name="contact" slot="right" @click="onClickRight"/>
         </van-nav-bar>
 
         <van-swipe :autoplay="3000">
@@ -55,8 +57,11 @@
             }
         },
         methods: {
-            onClickRight() {
+            onClickLeft() {
                 this.$router.push('/search');
+            },
+            onClickRight() {
+                this.$router.push('/login');
             }
         },
         mounted(){
