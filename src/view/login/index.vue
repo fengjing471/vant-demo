@@ -34,7 +34,8 @@
 </template>
 
 <script>
-    import {NavBar, Row, Col, Icon, Toast, Field,
+    import {
+        NavBar, Row, Col, Icon, Toast, Field,
         Cell, CellGroup,
         Button
     } from 'vant';

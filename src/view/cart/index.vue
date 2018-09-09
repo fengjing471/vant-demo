@@ -1,5 +1,10 @@
 <template>
   <div>
+
+    <van-nav-bar title="购物车">
+      <!--<van-icon name="search" slot="right" />-->
+    </van-nav-bar>
+
     <van-checkbox-group class="card-goods" v-model="checkedGoods">
       <van-checkbox
         class="card-goods__item"
@@ -22,14 +27,29 @@
       :button-text="submitBarText"
       @submit="onSubmit"
     />
+
+
+    <!--whb:加载自定义全局组件Tab-->
+    <GlobalTab />
+
   </div>
 </template>
 
 <script>
-import { Checkbox, CheckboxGroup, Card, SubmitBar, Toast } from 'vant';
+import {
+    NavBar, Row, Col, Icon, Toast, Field,
+    Checkbox, CheckboxGroup, Card, SubmitBar
+} from 'vant';
 
 export default {
   components: {
+    [NavBar.name]: NavBar,
+    [Row.name]: Row,
+    [Col.name]: Col,
+    [Icon.name]: Icon,
+    [Toast.name]: Toast,
+    [Field.name]: Field,
+
     [Card.name]: Card,
     [Checkbox.name]: Checkbox,
     [SubmitBar.name]: SubmitBar,

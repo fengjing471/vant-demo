@@ -2,11 +2,6 @@
     <div>
         <van-nav-bar
                 title="分类列表"
-                left-text="返回"
-                right-text="搜索"
-                left-arrow
-                @click-left="goBack"
-                @click-right="onClickRight"
         />
 
         <!--whb:sticky 滚动自动吸顶 swipeable 开启滑动切换效果，超过4条自动支持左右滑动-->
@@ -28,6 +23,8 @@
         </van-tabs>
 
 
+        <!--whb:加载自定义全局组件Tab-->
+        <GlobalTab />
 
     </div>
 </template>
@@ -74,12 +71,6 @@
             }
         },
         methods: {
-            onClickRight() {
-                Toast('按钮');
-            },
-            goBack(){
-                this.$router.go(-1);
-            },
             onRefresh() {
                 setTimeout(() => {
                     //this.$toast('刷新成功');

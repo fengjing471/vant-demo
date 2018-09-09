@@ -36,9 +36,8 @@ new Vue({
 });
 
 //whb:全局变量或函数定义区域_________begin
-Vue.prototype.goBack = function (event) {
-  console.log(event);
-  router.currentRoute.go(-1);
-  //page.$router.go(-1);
+Vue.prototype.goBack = function () {
+  console.log("...");
+  //router.currentRoute.go(-1);
 };
 //whb:全局变量或函数定义区域_________end
