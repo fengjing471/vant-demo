@@ -1,0 +1,41 @@
+注1：src源码目录 和 public全局静态目录，是@vue/cli 3.0革命版本的框架目录
+注2：App.vue（内含自定义全局样式） 和 main.js是全局入口文件
+注3：package.json中既有插件定义，又有插件配置（比如eslint的rule）
+
+#路由技巧：
+跳转：<router-link to="/tablist">  this.$router.push("url");//replace是直接替换栈
+返回： this.$router.go(-1);//返回上一层
+弹窗：this.$toast('刷新成功');
+
+
+# 安装依赖
+npm install
+# 本地开发
+# 通过 localhost:8080 访问页面， 相当于执行 package.json中的scripts中的对应命令
+npm run serve
+# 生产环境构建
+npm run build
+# 代码格式校验
+npm run lint
+```
+# 常用样式
+超长截断显示：<div class="van-ellipsis">这是一段宽度限制 250px 的文字，后面的内容会省略</div>
+1px边框：
+<div class="van-hairline--top"></div>
+<div class="van-hairline--top-bottom"></div>
+<div class="van-hairline--surround"></div>
+动画：
+<!-- 淡入 -->
+<transition name="van-fade">
+  <div v-show="visible">Fade</div>
+</transition>
+<!-- 下滑 -->
+<transition name="van-slide-bottom">
+  <div v-show="visible">Fade</div>
+</transition>
+
+#布局
+<!-- flex布局+列间隔定义+右对齐 -->
+<van-row type="flex" gutter="20" justify="end">
+    <van-col span="8">span: 8</van-col>
+</van-row>

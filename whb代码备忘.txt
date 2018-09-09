@@ -1,0 +1,24 @@
+#购物车
+<van-goods-action>
+            <van-goods-action-mini-btn icon="chat">
+                客服
+            </van-goods-action-mini-btn>
+            <van-goods-action-mini-btn icon="cart">
+                购物车
+            </van-goods-action-mini-btn>
+            <van-goods-action-big-btn>
+                加入购物车
+            </van-goods-action-big-btn>
+            <van-goods-action-big-btn primary>
+                立即购买
+            </van-goods-action-big-btn>
+        </van-goods-action>
+
+ GoodsAction,
+        GoodsActionBigBtn,
+        GoodsActionMiniBtn
+
+
+[GoodsAction.name]: GoodsAction,
+[GoodsActionBigBtn.name]: GoodsActionBigBtn,
+[GoodsActionMiniBtn.name]: GoodsActionMiniBtn
