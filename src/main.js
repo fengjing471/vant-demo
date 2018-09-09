@@ -6,6 +6,11 @@ import Vue from 'vue';
 import App from './App.vue';
 import { router } from './router';
 
+//whb:启用自定义全局组件
+import GlobalTab  from './components/global-tab';
+Vue.use(GlobalTab);
+
+
 /*whb:配置路由的mode,如果不配置会使用默认的 hash 模式，该模式下会将路径格式化为 #! 开头
 如果配置为history，则使用 HTML5 history 模式，该模式下没有 # 前缀，而且可以使用 pushState 和 replaceState。*/
 /*
@@ -21,6 +26,8 @@ new Vue({
   el: '#app',
   render: h => h(App)
 });
+
+
 
 
 //whb:全局变量或函数定义区域_________begin

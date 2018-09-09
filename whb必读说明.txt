@@ -1,30 +1,29 @@
 注1：src源码目录 和 public全局静态目录，是@vue/cli 3.0革命版本的框架目录
 注2：App.vue（内含自定义全局样式） 和 main.js是全局入口文件
 注3：package.json中既有插件定义，又有插件配置（比如eslint的rule）
-
+/*--------------------------- whb:华丽的分割线 ---------------------------*/
 #路由技巧：
 跳转：<router-link to="/tablist">  this.$router.push("url");//replace是直接替换栈
 返回： this.$router.go(-1);//返回上一层
 弹窗：this.$toast('刷新成功');
 
-#@vue/cli3 使用自定义组件
+#@vue/cli3 使用自定义全局组件（以 GlobalTab 为例）
 1）定义：
-需要统一定义成：src/components/ComXXX.vue
-2）index.vue中使用:
-<template>
-    <div>
-        <ComTab />
-    </div>
-</template>
-<script>
-    import ComTab from '../../components/ComTab';
-     export default {
-        components: {
-            'ComTab':ComTab
-        },
-</script>
+在：src\components\中定义 global-tab 文件夹，内含2个文件：tab.vue和index.js
+2）index.js  代码:
+import MyCom from './tab.vue';
+const GlobalTab={
+    install:function (Vue){
+        Vue.component('GlobalTab',MyCom)
+    }
+}
+export default GlobalTab
+3）main.js中全局引入
+import GlobalTab  from './components/global-tab';
+Vue.use(GlobalTab);
+4）具体业务页面中直接使用即可： <GlobalTab />
 
-
+/*--------------------------- whb:华丽的分割线 ---------------------------*/
 
 # 安装依赖
 npm install
