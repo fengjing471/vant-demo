@@ -51,11 +51,7 @@
             goBack(){
                 this.$router.go(-1);
             }
-        },
-        mounted(){
-            console.log("页面加载完成")
         }
-
     };
 </script>
 
