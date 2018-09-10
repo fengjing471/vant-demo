@@ -17,7 +17,7 @@
                     required
             />
             <van-field
-                    v-model="username"
+                    v-model="password"
                     label="密 码"
                     placeholder="请输入密码"
                     left-icon="records"
@@ -68,16 +68,15 @@
                 Toast('模块建设中');
             },
             onLogin() {
-                //let url="/kbuser/api/user/login";
-                let url="/piuser/login";
-                let params = {username: this.username, password: this.password};
+                let url="/kbuser/api/user/login";
+                //let url="/piuser/login";
+                let params = {username:this.username, password: this.password};
+                //let me=this;//whb:特别注意this在回调中不可直接使用
                 this.$http.post(url, params)
-                    .then(function (res) {
-                        console.log(res);
-
-                    })
-                    .catch(function (err) {
-                        console.log(err);
+                    .then(res => {
+                        this.$router.push("/index");
+                    },err => {
+                        Toast(err.msg);
                     })
             }
         }

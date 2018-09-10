@@ -7,6 +7,7 @@
 跳转：<router-link to="/tablist">  this.$router.push("url");//replace是直接替换栈
 返回： this.$router.go(-1);//返回上一层
 弹窗：this.$toast('刷新成功');
+带参：this.$router.push({path:'/test ', query: { id: thisId, option: ""}});
 
 #@vue/cli3 使用自定义全局样式（以 rfstyle.less 为例）
 1)定义

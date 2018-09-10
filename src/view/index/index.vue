@@ -1,7 +1,6 @@
 <template>
     <div>
-
-        <van-nav-bar title="XX商城">
+        <van-nav-bar title="公司研发框架">
             <van-icon name="search" slot="left" @click="onClickLeft"/>
             <van-icon name="contact" slot="right" @click="onClickRight"/>
         </van-nav-bar>
