@@ -1,6 +1,6 @@
 <template>
     <div>
-        <van-nav-bar title="搜索" left-arrow left-text="返回" @click-left="goBack">
+        <van-nav-bar title="搜索" left-arrow left-text="返回" @click-left="$goBack()">
             <!--<van-icon name="search" slot="right" />-->
         </van-nav-bar>
 
@@ -47,9 +47,6 @@
         methods: {
             onSearch() {
                 Toast('搜索关键字为：'+this.searchText);
-            },
-            goBack(){
-                this.$router.go(-1);
             }
         }
     };

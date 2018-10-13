@@ -18,7 +18,6 @@ import './common/rfstyle.less';
 import GlobalTab  from './components/global-tab';
 Vue.use(GlobalTab);
 
-
 /*whb:配置路由的mode,如果不配置会使用默认的 hash 模式，该模式下会将路径格式化为 #! 开头
 如果配置为history，则使用 HTML5 history 模式，该模式下没有 # 前缀，而且可以使用 pushState 和 replaceState。*/
 /*
@@ -36,8 +35,8 @@ new Vue({
 });
 
 //whb:全局变量或函数定义区域_________begin
-Vue.prototype.goBack = function () {
-  console.log("...");
-  //router.currentRoute.go(-1);
+Vue.prototype.$goBack = function () {
+    this.$router.go(-1);
 };
 //whb:全局变量或函数定义区域_________end
+
